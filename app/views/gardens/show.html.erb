@@ -4,5 +4,23 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_garden_path(@garden) %> |
-<%= link_to 'Back', gardens_path %>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <%= simple_form_for [@garden, @plant] do |f| %>
+        <%= f.input :name, placeholder: "Apple tree" %>
+        <%= f.input :image_url, placeholder: "https://www.purprojet.com/wp-content/uploads/2016/04/apple-tree-01.jpg" %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-end">
+      <%= link_to 'Edit', edit_garden_path(@garden) %> |
+      <%= link_to 'Back', gardens_path %>
+    </div>
+  </div>
+</div>
